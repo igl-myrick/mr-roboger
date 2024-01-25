@@ -15,5 +15,25 @@ function beepBoop(inputNum) {
       neighborhoodArr.splice(index, 1, "Beep!");
     }
   });
-  return neighborhoodArr;
+  return neighborhoodArr.join(", ");
+}
+
+// ui logic
+
+window.addEventListener("load", function() {
+  document.querySelector("form").addEventListener("submit", handleForm);
+})
+
+function handleForm(e) {
+  e.preventDefault();
+  const form = document.querySelector("form");
+  const userNum = document.getElementById("user-input").value;
+  const output = document.getElementById("output");
+  const result = beepBoop(userNum);
+  const p = document.createElement("p");
+  p.append(result);
+  output.append(p);
+  form.addEventListener("submit", function() {
+    p.remove();
+  });
 }
