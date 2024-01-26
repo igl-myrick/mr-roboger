@@ -5,7 +5,7 @@ function beepBoop(inputNum) {
   for (let i = 0; i < inputNum; i+=1) {
     neighborhoodArr.push(i);
   }
-  neighborhoodArr.push(inputNum);
+  neighborhoodArr.push(parseInt(inputNum));
   neighborhoodArr.forEach(function(number, index) {
     if (number.toString().includes(3)) {
       neighborhoodArr.splice(index, 1, "Will you be my neighbor?");
