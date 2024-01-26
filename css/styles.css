@@ -1,0 +1,19 @@
+body {
+  height: 100vh;
+  font-family: verdana;
+  text-align: center;
+  background-color: #cdffe2;
+}
+
+hr {
+  width: 60%;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+#output {
+  padding-left: 10%;
+  padding-right: 10%;
+}
