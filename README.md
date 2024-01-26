@@ -51,3 +51,7 @@ Expected Output: 0, 1, 2, 3, 4, 5, 6, 7, 8
 Test: It will return a user-inputted number with numbers containing 1, 2, or 3 modified to contain a custom string.
 Code: beepBoop(8)
 Expected Output: 0, "Beep!", "Boop!", "Won't you be my neighbor?", 4, 5, 6, 7, 8
+
+Test: Numbers containing a 3 will have the user's name added to them.
+Code: beepBoop(8, "John")
+Expected Output: 0, "Beep!", "Boop!", "Won't you be my neighbor, John?", 4, 5, 6, 7, 8

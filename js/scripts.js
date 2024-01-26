@@ -1,6 +1,10 @@
 // business logic
 
-function beepBoop(inputNum) {
+function beepBoop(inputNum, inputName) {
+  const invalidChars = inputName.match(/[^-' \w]/g);
+  if (inputName.trim() === "" || invalidChars !== null) {
+    return "Please enter a valid name."
+  }
   let neighborhoodArr = [];
   for (let i = 0; i < inputNum; i+=1) {
     neighborhoodArr.push(i);
@@ -8,7 +12,7 @@ function beepBoop(inputNum) {
   neighborhoodArr.push(parseInt(inputNum));
   neighborhoodArr.forEach(function(number, index) {
     if (number.toString().includes(3)) {
-      neighborhoodArr.splice(index, 1, "Will you be my neighbor?");
+      neighborhoodArr.splice(index, 1, "Will you be my neighbor, " + inputName.trim() + "?");
     } else if (number.toString().includes(2)) {
       neighborhoodArr.splice(index, 1, "Boop!");
     } else if (number.toString().includes(1)) {
@@ -28,8 +32,9 @@ function handleForm(e) {
   e.preventDefault();
   const form = document.querySelector("form");
   const userNum = document.getElementById("user-input").value;
+  const userName = document.getElementById("user-name").value;
   const output = document.getElementById("output");
-  const result = beepBoop(userNum);
+  const result = beepBoop(userNum, userName);
   const p = document.createElement("p");
   p.append(result);
   output.append(p);
