@@ -8,6 +8,10 @@ hr {
   width: 60%;
 }
 
+br {
+  line-height: 40px;
+}
+
 h1 {
   font-size: 40px;
 }

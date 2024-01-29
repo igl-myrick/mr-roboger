@@ -12,7 +12,7 @@
 
 ## Description
 
-_A program that will output an array of numbers starting from 0, based on a number the user inputs. The array will have certain numbers modified._
+_A program that will output an array of numbers starting from 0, based on a number the user inputs, as well as their name. The array will have certain numbers modified. The page also includes an option to display results either normally or backwards._
 
 ## Setup/Installation Requirements
 

@@ -19,7 +19,7 @@ function beepBoop(inputNum, inputName) {
       neighborhoodArr.splice(index, 1, "Beep!");
     }
   });
-  return neighborhoodArr.join(", ");
+  return neighborhoodArr;
 }
 
 // ui logic
@@ -36,7 +36,15 @@ function handleForm(e) {
   const output = document.getElementById("output");
   const result = beepBoop(userNum, userName);
   const p = document.createElement("p");
-  p.append(result);
+  const order = document.querySelector("input[name='order']:checked").value;
+  if (result === "Please enter a valid name.") {
+    p.append(result);
+  } else if (order === "reverse") {
+    result.reverse();
+    p.append(result.join(", "));
+  } else {
+    p.append(result.join(", "));
+  }
   output.append(p);
   form.addEventListener("submit", function() {
     p.remove();
